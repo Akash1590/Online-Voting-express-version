@@ -1,0 +1,65 @@
+<html>
+	<head>
+	<title>Voter panel</title>
+	</head>
+	<body>
+		<style>
+		 body {
+                background-color: 1B2631;
+              }
+		</style>
+			
+						<font color="#CACFD2">
+						<font face ="Garamond">
+                        <p style="font-size:45px;" >
+						<span style="margin-left:9em"></span>
+						Welcome To Online Voting
+						<hr>
+						<font color="#1EC0C5">
+						<font face ="Garamond">
+                        <p style="font-size:30px;" >
+						<span style="margin-left:18.5em"></span>
+						Voter Control
+						<hr>
+						<br>
+						<a href="/voter/update/<%= data.NID %>" name=" Update"   style=" font-size:20px;color:#6BAEDC;margin-left:8em">Update</a>						
+						<a href="/vote" name=" Current Vote"   style=" font-size:20px;color:#6BAEDC;margin-left:19em">Current Vote</a>					
+						<a href="/logout" name=" Logout"   style=" font-size:20px;color:#6BAEDC;margin-left:20em">Logout</a>
+						<h1> Personal Details </h1>
+		<table>
+
+		<tr>
+			<td> <font color="#1FCB9C"> NID</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.NID %></td>
+		</tr>
+		<tr>
+			<td> <font color="#1FCB9C"> NAME</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.Name %></td>
+		</tr>
+		<tr>
+			<td> <font color="#1FCB9C"> Address</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.Address %></td>
+		</tr>
+		<tr>
+			<td> <font color="#1FCB9C"> Date Of Birth</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.Dateofbirth %></td>
+		</tr>
+		<tr>
+			<td> <font color="#1FCB9C"> Phone NO.</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.Phoneno %></td>
+		</tr>
+		<tr>
+			<td> <font color="#1FCB9C"> Email</td>
+			<td> <span style="margin-left:4em"></span>
+			<font color="#1FCB9C"> <%= data.email %></td>
+		</tr>
+	</table>
+						
+		
+	</body>
+</html>

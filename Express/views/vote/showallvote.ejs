@@ -1,0 +1,97 @@
+<html>
+	<head>
+	<title>Vote Panel</title>
+	</head>
+	<body>
+		<style>
+		 body {
+                background-color: 1B2631;
+              }
+		</style>
+		<fieldset>
+						<font color="#CACFD2">
+						<font face ="Garamond">
+                        <p style="font-size:45px;" >
+						<span style="margin-left:10em"></span>
+						Welcome To Online Voting
+						<hr>
+						<font color="#1EC0C5">
+						<font face ="Garamond">
+                        <p style="font-size:30px;" >
+						<span style="margin-left:18.5em"></span>
+						Vote list
+						<hr>
+						<br>
+						<a href="/home" name=" Voter"   style=" font-size:20px;color:#6BAEDC;margin-left:8em">Back</a>
+						<% if (user.persontypeid==1) { %>
+						<a href="/admin/addnewvote" name="Voter"   style=" font-size:20px;color:#6BAEDC;margin-left:8em">Add new vote</a>
+						<% } %>
+						<br></br><br></br>
+						<table>
+							<% for(var i = 0; i < catlist.length; i++) {%>
+							<tr>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:2em"></span>
+								<%= catlist[i].Voteid %>
+								<hr>
+								</th>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:16em"></span>
+								<%= catlist[i].votetopic %>
+								<hr>
+								</th>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:6em"></span>
+								<a href="/vote/showallcandidate/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">See Candidates</a>
+								<hr>
+								</th>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:4em"></span>
+								<% if (user.persontypeid==1) { %>
+								<% if(catlist[i].votestatus=='not started'){ %>
+								<a href="/vote/startvote/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">Start</a>
+								<%  }
+								else { %>
+								<a href="/vote/endvote/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">End</a>
+
+								<%  } %>
+								<% } else if(user.persontypeid==2) {%>
+								<a href="/voter/insert/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">Apply For Candidate</a>
+								<%  } else {%>
+								<p> </p>
+								<%  } %>
+								<hr>
+								</th>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:4em"></span>
+								<% if(catlist[i].votestatus=='not started'){%>
+								Vote Now <% }
+								else { %>
+								<a href="/vote/votenow/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">Vote Now </a>
+								<% } %>
+								<hr>
+								</th>
+								<th>
+								<font color="#6BAEDC">
+								<p style="font-size:18px;" >
+								<span style="margin-left:4em"></span>
+								<a href="/vote/generateresult/<%= catlist[i].Voteid %>" name=" Voter"   style=" font-size:18px;color:#6BAEDC;">Result</a>
+								<hr>
+								</th>
+							</tr>
+							<% } %>
+						</table>
+						
+		</fieldset>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+	<head>
+	<title>Result of election</title>
+	</head>
+	<body>
+		<style>
+		 body {
+                background-color: 1B2631;
+              }
+		</style>
+		<fieldset>
+						<font color="#CACFD2">
+						<font face ="Garamond">
+                        <p style="font-size:45px;" >
+						<span style="margin-left:9em"></span>
+						Welcome To Online Voting
+						<hr>
+						<font color="#1EC0C5">
+						<font face ="Garamond">
+                        <p style="font-size:30px;" >
+						<span style="margin-left:18.5em"></span>
+						Currently Winner list
+						<hr>
+						<br>
+						<a href="/vote" name=" Voter"   style=" font-size:20px;color:#6BAEDC;margin-left:8em">Back</a>
+						<br></br><br></br>
+						<table>
+							<% for(var i = 0; i < catlist.length; i++) {%>
+							<tr>
+								<th>
+								<font color="#1FCB9C">
+								<p style="font-size:20px;" >
+								<span style="margin-left:6em"></span>
+								<%= catlist[i].Name %>
+								<hr>
+								</th>
+								<th>
+								<font color="#1FCB9C">
+								<p style="font-size:20px;" >
+								<span style="margin-left:8em"></span>
+								<% if(catlist[i].totalvotes > 0)
+								{ %>
+									<%= ((catlist[i].totalvote)/(catlist[i].totalvotes))*100 %>   %
+								<% } else { %>
+
+								No vote Count
+								<% } %>
+								
+								<hr>
+								</th>
+								
+							</tr>
+							<% } %>
+						</table>
+						
+		</fieldset>
+	</body>
+</html>
